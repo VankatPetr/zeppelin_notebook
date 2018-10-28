@@ -3,7 +3,7 @@
     {
       "text": "//get ARAD data for Loans to Households\r\nimport org.apache.commons.io.IOUtils\r\nimport java.net.URL\r\nimport java.nio.charset.Charset\r\n\r\nval ResidentsLoansToHouseholds_RDD \u003d sc.parallelize(\r\n    IOUtils.toString(\r\n        new URL(\"https://www.cnb.cz/cnb/STAT.ARADY_PKG.VYSTUP?p_period\u003d1\u0026p_sort\u003d2\u0026p_des\u003d50\u0026p_sestuid\u003d27368\u0026p_uka\u003d1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11\u0026p_strid\u003dAABBAF\u0026p_od\u003d201501\u0026p_do\u003d203012\u0026p_lang\u003dEN\u0026p_format\u003d2\u0026p_decsep\u003d.\"),\r\n        Charset.forName(\"utf8\")).split(\"\\n\"))\r\n\r\n\r\nval ResidentsLoansToHouseholds_DF_string\u003dResidentsLoansToHouseholds_RDD.toDF()",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.653",
+      "dateUpdated": "2018-10-27 23:23:47.984",
       "config": {
         "tableHide": true,
         "editorSetting": {
@@ -36,14 +36,15 @@
       "jobName": "paragraph_1540658058652_-597598980",
       "id": "20181020-182325_746924235",
       "dateCreated": "2018-10-27 18:34:18.653",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:23:48.469",
+      "dateFinished": "2018-10-27 23:24:51.167",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val ResidentsLoansToHouseholds_DF_int\u003dResidentsLoansToHouseholds_DF_string.withColumn(\"_tmp\", split($\"value\", \"\\\\|\")).select(\r\n  $\"_tmp\".getItem(0).as(\"Date\"),\r\n  $\"_tmp\".getItem(1).as(\"IND1 Residents loans to households incl NPISHs total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(2).as(\"IND2 consumer credit to households incl debit balances on current account total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(3).as(\"IND3 of which debit balances on current accounts total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(4).as(\"IND4 receivables from payment cards total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(5).as(\"IND5 consumer credit total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(6).as(\"IND6 lending to households for house purchase total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(7).as(\"IND7 of which mortgage loans to households for house purchase total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(8).as(\"IND8 standard credit from construction savings total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(9).as(\"IND9 bridging credit from construction savings total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(10).as(\"IND10 consumer credit on real estate total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(11).as(\"IND11 other lending to households total\").cast(\"Float\")\r\n).drop(\"_tmp\").filter($\"Date\" \u003d!\u003d \"Date\" \u0026\u0026 $\"IND1 Residents loans to households incl NPISHs total\".isNotNull)",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.654",
+      "dateUpdated": "2018-10-27 23:24:51.344",
       "config": {
         "tableHide": true,
         "editorSetting": {
@@ -76,14 +77,15 @@
       "jobName": "paragraph_1540658058654_945658336",
       "id": "20181022-213847_1172537708",
       "dateCreated": "2018-10-27 18:34:18.654",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:24:52.040",
+      "dateFinished": "2018-10-27 23:24:56.959",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val ResidentsLoansToHouseholds_DF \u003d ResidentsLoansToHouseholds_DF_int.withColumn(\"Date_YMD\", to_date($\"Date\", \"dd.M.yyyy\")).drop($\"Date\")\n\n//ResidentsLoansToHouseholds_DF.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.656",
+      "dateUpdated": "2018-10-27 23:24:57.207",
       "config": {
         "tableHide": true,
         "editorSetting": {
@@ -115,14 +117,15 @@
       "jobName": "paragraph_1540658058655_-902456781",
       "id": "20181022-225120_1721905702",
       "dateCreated": "2018-10-27 18:34:18.655",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:24:57.535",
+      "dateFinished": "2018-10-27 23:25:00.431",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "ResidentsLoansToHouseholds_DF.createOrReplaceTempView(\"ResidentsLoansToHouseholds_W\")",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.656",
+      "dateUpdated": "2018-10-27 23:25:00.555",
       "config": {
         "tableHide": true,
         "editorSetting": {
@@ -149,15 +152,16 @@
       "jobName": "paragraph_1540658058656_-889885345",
       "id": "20181022-214153_3946058",
       "dateCreated": "2018-10-27 18:34:18.656",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:00.842",
+      "dateFinished": "2018-10-27 23:25:02.630",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Households Credit Balance Czech Republic",
       "text": "%sql\nselect *\nfrom (\nselect \n        Date_YMD\n        ,format_number(((`IND1 Residents loans to households incl NPISHs total`/LAG(`IND1 Residents loans to households incl NPISHs total`,12) OVER (ORDER BY Date_YMD))-1)*100,1) as `Households Total Credit Balance - YoY Change (%)`\n        ,format_number(((`IND7 of which mortgage loans to households for house purchase total`/LAG(`IND7 of which mortgage loans to households for house purchase total`,12) OVER (ORDER BY Date_YMD))-1)*100,1) as `Mortgage - YoY Change (%)`\n        ,format_number(((`IND5 consumer credit total`/LAG(`IND5 consumer credit total`,12) OVER (ORDER BY Date_YMD))-1)*100,1) as `Consumer Credit - YoY Change (%)`\nfrom ResidentsLoansToHouseholds_W) a\nwhere \n    `Households Total Credit Balance - YoY Change (%)` is not null\n    and Date_YMD\u003e\u003ddate_sub(current_date(),365*2)\n",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.657",
+      "dateUpdated": "2018-10-27 23:25:02.714",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -2578,18 +2582,31 @@
           }
         ]
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://192.168.0.241:4040/jobs/job?id\u003d0"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1540658058656_1485553369",
       "id": "20181024-211515_1360458498",
       "dateCreated": "2018-10-27 18:34:18.656",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:02.890",
+      "dateFinished": "2018-10-27 23:25:09.736",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "//get ARAD data for Loans - New Business Volumes\r\nval NewBusinessVolumes_RDD \u003d sc.parallelize(\r\n    IOUtils.toString(\r\n        new URL(\"https://www.cnb.cz/cnb/STAT.ARADY_PKG.VYSTUP?p_period\u003d1\u0026p_sort\u003d2\u0026p_des\u003d50\u0026p_sestuid\u003d12861\u0026p_uka\u003d1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11\u0026p_strid\u003dAAABAB\u0026p_od\u003d201501\u0026p_do\u003d203012\u0026p_lang\u003dEN\u0026p_format\u003d2\u0026p_decsep\u003d.\"),\r\n        Charset.forName(\"utf8\")).split(\"\\n\"))\r\n\r\n\r\nval NewBusinessVolumes_DF_string\u003dNewBusinessVolumes_RDD.toDF()",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.662",
+      "dateUpdated": "2018-10-27 23:25:09.845",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -2613,7 +2630,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "NewBusinessVolumes_RDD: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[41] at parallelize at \u003cconsole\u003e:30\nNewBusinessVolumes_DF_string: org.apache.spark.sql.DataFrame \u003d [value: string]\n"
+            "data": "NewBusinessVolumes_RDD: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[9] at parallelize at \u003cconsole\u003e:30\nNewBusinessVolumes_DF_string: org.apache.spark.sql.DataFrame \u003d [value: string]\n"
           }
         ]
       },
@@ -2621,14 +2638,15 @@
       "jobName": "paragraph_1540658058657_374866275",
       "id": "20181027-001250_1971368628",
       "dateCreated": "2018-10-27 18:34:18.657",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:10.123",
+      "dateFinished": "2018-10-27 23:25:12.966",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val NewBusinessVolumes_DF_int\u003dNewBusinessVolumes_DF_string.withColumn(\"_tmp\", split($\"value\", \"\\\\|\")).select(\r\n  $\"_tmp\".getItem(0).as(\"Date\"),\r\n  $\"_tmp\".getItem(1).as(\"IND1 consumer credit,  loans for house purchase and other loans total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(2).as(\"IND2 consumer credit total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(3).as(\"IND3 consumer credit floating rate and up to 1 year rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(4).as(\"IND4 consumer credit over 1 and up to 5 years rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(5).as(\"IND5 consumer credit over 5 years rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(6).as(\"IND6 for house purchase total\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(7).as(\"IND7 for house purchase floating rate and up to 1 year rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(8).as(\"IND8 for house purchase over 1 and up to 5 years rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(9).as(\"IND9 for house purchase over 5 and up to 10 years rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(10).as(\"IND10 for house purchas eover 10 years rate fixation\").cast(\"Float\"),\r\n  $\"_tmp\".getItem(11).as(\"IND11 other loans total\").cast(\"Float\")\r\n).drop(\"_tmp\").filter($\"Date\" \u003d!\u003d \"Date\" \u0026\u0026 $\"IND1 consumer credit,  loans for house purchase and other loans total\".isNotNull)",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.663",
+      "dateUpdated": "2018-10-27 23:25:13.102",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -2660,14 +2678,15 @@
       "jobName": "paragraph_1540658058662_998441870",
       "id": "20181027-002625_221766771",
       "dateCreated": "2018-10-27 18:34:18.662",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:13.373",
+      "dateFinished": "2018-10-27 23:25:15.963",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val NewBusinessVolumes_DF \u003d NewBusinessVolumes_DF_int.withColumn(\"Date_YMD\", to_date($\"Date\", \"dd.M.yyyy\")).drop($\"Date\")",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.663",
+      "dateUpdated": "2018-10-27 23:25:16.087",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -2698,14 +2717,15 @@
       "jobName": "paragraph_1540658058663_-1971762462",
       "id": "20181027-004014_1527381641",
       "dateCreated": "2018-10-27 18:34:18.663",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:16.462",
+      "dateFinished": "2018-10-27 23:25:18.675",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "NewBusinessVolumes_DF.createOrReplaceTempView(\"NewBusinessVolumes_DF_W\")",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.664",
+      "dateUpdated": "2018-10-27 23:25:18.765",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -2733,15 +2753,16 @@
       "jobName": "paragraph_1540658058664_-626382847",
       "id": "20181027-004056_524097045",
       "dateCreated": "2018-10-27 18:34:18.664",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:19.250",
+      "dateFinished": "2018-10-27 23:25:20.413",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Households Credit Balance - New Business Volumes",
       "text": "%sql\nselect *\nfrom (\nselect \n        Date_YMD\n        ,format_number(((`IND1 consumer credit,  loans for house purchase and other loans total`/LAG(`IND1 consumer credit,  loans for house purchase and other loans total`,12) OVER (ORDER BY Date_YMD))-1)*100,1) as `New Households Credit Balance - YoY Change (%)`\n        ,format_number(((`IND6 for house purchase total`/LAG(`IND6 for house purchase total`,12) OVER (ORDER BY Date_YMD))-1)*100,1) as `New House Purchase Loans - YoY Change (%)`\n        ,format_number(((`IND2 consumer credit total`/LAG(`IND2 consumer credit total`,12) OVER (ORDER BY Date_YMD))-1)*100,1) as `New Consumer Credit - YoY Change (%)`\nfrom NewBusinessVolumes_DF_W) a\nwhere \n    `New Households Credit Balance - YoY Change (%)` is not null\n    and Date_YMD\u003e\u003ddate_sub(current_date(),365*2)",
       "user": "anonymous",
-      "dateUpdated": "2018-10-27 18:34:18.665",
+      "dateUpdated": "2018-10-27 23:25:20.446",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -5132,12 +5153,25 @@
           }
         ]
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://192.168.0.241:4040/jobs/job?id\u003d1"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1540658058664_328752386",
       "id": "20181027-004144_1477758079",
       "dateCreated": "2018-10-27 18:34:18.664",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2018-10-27 23:25:20.658",
+      "dateFinished": "2018-10-27 23:25:21.837",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     }
   ],

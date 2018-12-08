@@ -1,4 +1,4 @@
-## Notebooks for Apache Zeppelin
+﻿## Notebooks for Apache Zeppelin
 apache zeppelin notes
 
 ##### Importing specific notebooks:
@@ -10,4 +10,4 @@ Copy the "json" link URL from the table below and paste it into Zeppelin's impor
 
 | Description	| Components | Code	| View	| Author | Comments	|
 | ------------- | ----- | ---------- 	| ------------  | --------  | --------  |
-| Czech National Bank ARAD data | Spark/SparkSQL | [json](https://github.com/VankatPetr/zeppelin_notebook/blob/master/2DWKVFZNJ/note.json) | [view](https://www.zepl.com/U59FG5CX8/notebooks/b803c149d911426890467149a50949b0) | [Petr Vankat](https://twitter.com/VankatPetr) | ARAD is a public database, forming part of the Czech National Bank’s information service. |
+| Czech National Bank ARAD data | Spark/SparkSQL | [json](https://github.com/VankatPetr/zeppelin_notebook/blob/master/2DWKVFZNJ/note.json) | [view](https://www.zepl.com/viewer/github/VankatPetr/zeppelin_notebook/blob/master/2DWKVFZNJ/note.json) It is possible to view the notebook and modify charts but you can't run it on ZEPL (i.e. getting latest data) because ZEPL doesn't support Spart 2.2 (to_date function with 2 parameters). | [Petr Vankat](https://twitter.com/VankatPetr) | ARAD is a public database, forming part of the Czech National Bank’s information service. |

@@ -1,0 +1,274 @@
+{
+  "paragraphs": [
+    {
+      "text": "val df \u003d spark.range(500).toDF(\"number\")\r\ndf.select(df.col(\"number\") + 10)",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-03 11:28:20.033",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [number: bigint]\nres4: org.apache.spark.sql.DataFrame \u003d [(number + 10): bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1541240395340_1913199906",
+      "id": "20181103-111955_1851792254",
+      "dateCreated": "2018-11-03 11:19:55.340",
+      "dateStarted": "2018-11-03 11:28:20.174",
+      "dateFinished": "2018-11-03 11:29:29.870",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select(df.col(\"number\") + 10).show()",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-03 11:34:17.564",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+\n|(number + 10)|\n+-------------+\n|           10|\n|           11|\n|           12|\n|           13|\n|           14|\n|           15|\n|           16|\n|           17|\n|           18|\n|           19|\n|           20|\n|           21|\n|           22|\n|           23|\n|           24|\n|           25|\n|           26|\n|           27|\n|           28|\n|           29|\n+-------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1541240900087_-1789382793",
+      "id": "20181103-112820_1735964781",
+      "dateCreated": "2018-11-03 11:28:20.087",
+      "dateStarted": "2018-11-03 11:34:17.631",
+      "dateFinished": "2018-11-03 11:34:20.226",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.range(2).toDF().collect()",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-03 11:50:40.510",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res10: Array[org.apache.spark.sql.Row] \u003d Array([0], [1])\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1541241213797_2105658968",
+      "id": "20181103-113333_862045379",
+      "dateCreated": "2018-11-03 11:33:33.797",
+      "dateStarted": "2018-11-03 11:50:40.605",
+      "dateFinished": "2018-11-03 11:50:42.820",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types._\r\nval b \u003d ByteType",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-03 11:59:59.131",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types._\nb: org.apache.spark.sql.types.ByteType.type \u003d ByteType\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1541242240510_598961060",
+      "id": "20181103-115040_1047609087",
+      "dateCreated": "2018-11-03 11:50:40.510",
+      "dateStarted": "2018-11-03 11:59:59.273",
+      "dateFinished": "2018-11-03 12:00:01.991",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.format(\"json\").option(\"inferSchema\", \"true\").load(\"file:///C:/Users/owner/Documents/GitHub/Spark-The-Definitive-Guide/data/flight-data/json/2014-summary.json\")\n//val df \u003d spark.read.json(\"file:///C:/Users/owner/Documents/GitHub/Spark-The-Definitive-Guide/data/flight-data/json/2014-summary.json\")",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-03 14:30:25.023",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0, localhost, executor driver): java.lang.NoSuchMethodError: org.apache.hadoop.fs.FileSystem$Statistics.getThreadStatistics()Lorg/apache/hadoop/fs/FileSystem$Statistics$StatisticsData;\r\n\tat org.apache.spark.deploy.SparkHadoopUtil$$anonfun$1$$anonfun$apply$mcJ$sp$1.apply(SparkHadoopUtil.scala:149)\r\n\tat org.apache.spark.deploy.SparkHadoopUtil$$anonfun$1$$anonfun$apply$mcJ$sp$1.apply(SparkHadoopUtil.scala:149)\r\n\tat scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n\tat scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n\tat scala.collection.Iterator$class.foreach(Iterator.scala:893)\r\n\tat scala.collection.AbstractIterator.foreach(Iterator.scala:1336)\r\n\tat scala.collection.IterableLike$class.foreach(IterableLike.scala:72)\r\n\tat scala.collection.AbstractIterable.foreach(Iterable.scala:54)\r\n\tat scala.collection.TraversableLike$class.map(TraversableLike.scala:234)\r\n\tat scala.collection.AbstractTraversable.map(Traversable.scala:104)\r\n\tat org.apache.spark.deploy.SparkHadoopUtil$$anonfun$1.apply$mcJ$sp(SparkHadoopUtil.scala:149)\r\n\tat org.apache.spark.deploy.SparkHadoopUtil.getFSBytesReadOnThreadCallback(SparkHadoopUtil.scala:150)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.\u003cinit\u003e(FileScanRDD.scala:78)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD.compute(FileScanRDD.scala:71)\r\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)\r\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)\r\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)\r\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:108)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:335)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\r\n\tat java.lang.Thread.run(Thread.java:748)\r\n\r\nDriver stacktrace:\r\n  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1499)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1487)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1486)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1486)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\r\n  at scala.Option.foreach(Option.scala:257)\r\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:814)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1714)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1669)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1658)\r\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:630)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2022)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2119)\r\n  at org.apache.spark.rdd.RDD$$anonfun$fold$1.apply(RDD.scala:1089)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.RDD.fold(RDD.scala:1083)\r\n  at org.apache.spark.sql.execution.datasources.json.JsonInferSchema$.infer(JsonInferSchema.scala:68)\r\n  at org.apache.spark.sql.execution.datasources.json.TextInputJsonDataSource$.inferFromDataset(JsonDataSource.scala:114)\r\n  at org.apache.spark.sql.execution.datasources.json.TextInputJsonDataSource$.infer(JsonDataSource.scala:108)\r\n  at org.apache.spark.sql.execution.datasources.json.JsonDataSource.inferSchema(JsonDataSource.scala:62)\r\n  at org.apache.spark.sql.execution.datasources.json.JsonFileFormat.inferSchema(JsonFileFormat.scala:57)\r\n  at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$7.apply(DataSource.scala:177)\r\n  at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$7.apply(DataSource.scala:177)\r\n  at scala.Option.orElse(Option.scala:289)\r\n  at org.apache.spark.sql.execution.datasources.DataSource.getOrInferFileFormatSchema(DataSource.scala:176)\r\n  at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:366)\r\n  at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:178)\r\n  at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:156)\r\n  ... 52 elided\r\nCaused by: java.lang.NoSuchMethodError: org.apache.hadoop.fs.FileSystem$Statistics.getThreadStatistics()Lorg/apache/hadoop/fs/FileSystem$Statistics$StatisticsData;\r\n  at org.apache.spark.deploy.SparkHadoopUtil$$anonfun$1$$anonfun$apply$mcJ$sp$1.apply(SparkHadoopUtil.scala:149)\r\n  at org.apache.spark.deploy.SparkHadoopUtil$$anonfun$1$$anonfun$apply$mcJ$sp$1.apply(SparkHadoopUtil.scala:149)\r\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n  at scala.collection.Iterator$class.foreach(Iterator.scala:893)\r\n  at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)\r\n  at scala.collection.IterableLike$class.foreach(IterableLike.scala:72)\r\n  at scala.collection.AbstractIterable.foreach(Iterable.scala:54)\r\n  at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)\r\n  at scala.collection.AbstractTraversable.map(Traversable.scala:104)\r\n  at org.apache.spark.deploy.SparkHadoopUtil$$anonfun$1.apply$mcJ$sp(SparkHadoopUtil.scala:149)\r\n  at org.apache.spark.deploy.SparkHadoopUtil.getFSBytesReadOnThreadCallback(SparkHadoopUtil.scala:150)\r\n  at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.\u003cinit\u003e(FileScanRDD.scala:78)\r\n  at org.apache.spark.sql.execution.datasources.FileScanRDD.compute(FileScanRDD.scala:71)\r\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)\r\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)\r\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)\r\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)\r\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)\r\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\r\n  at org.apache.spark.scheduler.Task.run(Task.scala:108)\r\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:335)\r\n  ... 3 more\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://192.168.0.241:4040/jobs/job?id\u003d0"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1541242799132_1825888995",
+      "id": "20181103-115959_381297175",
+      "dateCreated": "2018-11-03 11:59:59.132",
+      "dateStarted": "2018-11-03 14:30:25.323",
+      "dateFinished": "2018-11-03 14:31:19.906",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%python\ndf \u003d spark.read.format(\"json\").load(\"file:///C:/Users/owner/Documents/GitHub/Spark-The-Definitive-Guide/data/flight-data/json/2015-summary.json\")",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-03 13:51:25.513",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Traceback (most recent call last):\n  File \"C:\\tmp\\zeppelin_python-4038479714677844570.py\", line 313, in \u003cmodule\u003e\n    exec(code, _zcUserQueryNameSpace)\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nNameError: name \u0027spark\u0027 is not defined\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\tmp\\zeppelin_python-4038479714677844570.py\", line 320, in \u003cmodule\u003e\n    raise Exception(traceback.format_exc())\nException: Traceback (most recent call last):\n  File \"C:\\tmp\\zeppelin_python-4038479714677844570.py\", line 313, in \u003cmodule\u003e\n    exec(code, _zcUserQueryNameSpace)\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nNameError: name \u0027spark\u0027 is not defined\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1541247452411_-2128737167",
+      "id": "20181103-131732_1350397873",
+      "dateCreated": "2018-11-03 13:17:32.413",
+      "dateStarted": "2018-11-03 13:18:10.728",
+      "dateFinished": "2018-11-03 13:19:00.724",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1541242812539_-248554125",
+      "id": "20181103-120012_1687855481",
+      "dateCreated": "2018-11-03 12:00:12.539",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "SparkDefinitiveGuide",
+  "id": "2DX4V82YS",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "python:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
